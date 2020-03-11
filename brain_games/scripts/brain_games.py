@@ -1,8 +1,13 @@
+# -*- coding:utf-8 -*-
+
+"""Modile is being developed. General scripts."""
 from brain_games.cli import welcome_user
 
+
 def main():
-    print('Welcome to the Brain Games!')
-    print('')
+    """Start application."""
+    print('Welcome to the Brain Games!')  # noqa: T001
+    print('')  # noqa: T001
     welcome_user()
 
 
