@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "Andrka_brain_games"
-version = "0.1.2"
+name = "andrka_brain_games"
+version = "0.1.4"
 description = ""
 authors = ["Andrka <postbox4mail@gmail.com>"]
 packages = [
