@@ -19,15 +19,46 @@ def take_name() -> str:
     return prompt.string('May I have your name? ')
 
 
-def welcome_user() -> None:
-    """Greet user by name."""
-    print('Hello, {0}!'.format(take_name()))  # noqa: T001
+def welcome_user() -> str:
+    """Greet user and return name.
+
+    # noqa: DAR201
+
+    """
+    print('')  # noqa: T001
+    name = take_name()
+    print('Hello, {0}!'.format(name))  # noqa: T001
+    print('')  # noqa: T001
+    return name
 
 
-def take_answer() -> str:
-    """Take answer from user.
+def take_str_answer() -> str:
+    """Take str answer from user.
 
     # noqa: DAR201
 
     """
     return prompt.string('Your answer: ')
+
+
+def take_int_answer() -> int:
+    """Take int answer from user.
+
+    # noqa: DAR201
+
+    """
+    return prompt.integer('Your answer: ')
+
+
+def end_game_fail(name: str, answer: str, correct_answer: str) -> None:
+    """End game with wrong answer.
+
+    # noqa: DAR101
+
+    """
+    print('{0}\'{1}\'{2} is wrong '.format(font_red, answer, font_end), end='')  # noqa: T001, E501, Q003
+    print('answer ;{0}({1}{2}.{3} '.format(font_bold, font_end, font_blue, font_end), end='')  # noqa: T001, E501
+    print('Correct answer was ', end='')  # noqa: T001
+    print('{0}\'{1}\'{2}{3}.{4}'.format(font_red, correct_answer, font_end, font_blue, font_end))  # noqa: T001, E501, Q003
+    print('Let{0}\'s try again, '.format(font_red), end='')  # noqa: T001, E501, Q003
+    print('{0}!{1}'.format(name, font_end))  # noqa: T001
