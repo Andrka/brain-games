@@ -4,7 +4,8 @@
 
 from random import randint
 
-from brain_games.cli import ask_question, game, take_str_answer
+from brain_games.cli import ask_question, take_str_answer
+from brain_games.game import play_game
 
 
 def check_even(quiz_number: int) -> str:
@@ -36,4 +37,4 @@ def realise_even_question() -> str:
 
 def play_even() -> None:
     """Play even game."""
-    game(realise_even_question, take_str_answer)
+    play_game(realise_even_question, take_str_answer)

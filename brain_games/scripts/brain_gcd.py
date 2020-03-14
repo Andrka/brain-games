@@ -1,6 +1,7 @@
+#!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
-"""Module is being developed. Calc game start."""
+"""Module is being developed. Gcd game start."""
 
 from brain_games.games.gcd import play_gcd
 

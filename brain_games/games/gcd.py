@@ -4,7 +4,8 @@
 
 from random import randint
 
-from brain_games.cli import ask_question, game, take_int_answer
+from brain_games.cli import ask_question, take_int_answer
+from brain_games.game import play_game
 
 
 def find_gcd(first_number: int, second_number: int) -> int:
@@ -36,4 +37,4 @@ def realise_gcd_question() -> str:  # noqa: WPS210
 
 def play_gcd() -> None:
     """Play gcd game."""
-    game(realise_gcd_question, take_int_answer)
+    play_game(realise_gcd_question, take_int_answer)

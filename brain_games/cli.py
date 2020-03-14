@@ -10,15 +10,6 @@ font_bold = '\033[1m'
 font_end = '\033[0m'
 
 
-def take_name() -> str:
-    """Take user name.
-
-    # noqa: DAR201
-
-    """
-    return prompt.string('May I have your name? ')
-
-
 def welcome_user() -> str:
     """Greet user and return name.
 
@@ -26,7 +17,7 @@ def welcome_user() -> str:
 
     """
     print('')  # noqa: T001
-    name = take_name()
+    name = prompt.string('May I have your name? ')
     print('Hello, {0}!'.format(name))  # noqa: T001
     print('')  # noqa: T001
     return name
@@ -85,20 +76,3 @@ def end_game_win(name: str) -> None:
 
     """
     print('Congratulation, {0}!'.format(name))  # noqa: T001
-
-
-def game(question_function_name, answer_function_name) -> None:
-    """Play game.
-
-    # noqa: DAR101
-
-    """
-    name = welcome_user()
-    for index in range(3):  # noqa: B007
-        correct_answer = question_function_name()
-        answer = str(answer_function_name())
-        if answer != correct_answer:
-            end_game_fail(name, str(answer), str(correct_answer))
-            return
-        notify_right()
-    end_game_win(name)

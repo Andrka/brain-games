@@ -4,7 +4,8 @@
 
 from random import randint
 
-from brain_games.cli import ask_question, game, take_int_answer
+from brain_games.cli import ask_question, take_int_answer
+from brain_games.game import play_game
 
 
 def find_calc(first_number: int, second_number: int, operation_int: int) -> int:  # noqa: E501
@@ -46,4 +47,4 @@ def realise_calc_question() -> str:  # noqa: WPS210
 
 def play_calc() -> None:
     """Play calc game."""
-    game(realise_calc_question, take_int_answer)
+    play_game(realise_calc_question, take_int_answer)
