@@ -50,6 +50,15 @@ def take_int_answer() -> int:
     return prompt.integer('Your answer: ')
 
 
+def ask_question(phrase: str) -> None:
+    """Ask user the question.
+
+    # noqa: DAR101
+
+    """
+    print('Question: {0}'.format(phrase))  # noqa: T001
+
+
 def end_game_fail(name: str, answer: str, correct_answer: str) -> None:
     """End game with wrong answer.
 
@@ -62,3 +71,34 @@ def end_game_fail(name: str, answer: str, correct_answer: str) -> None:
     print('{0}\'{1}\'{2}{3}.{4}'.format(font_red, correct_answer, font_end, font_blue, font_end))  # noqa: T001, E501, Q003
     print('Let{0}\'s try again, '.format(font_red), end='')  # noqa: T001, E501, Q003
     print('{0}!{1}'.format(name, font_end))  # noqa: T001
+
+
+def notify_right() -> None:
+    """Notify user about right answer."""
+    print('Correct!')  # noqa: T001
+
+
+def end_game_win(name: str) -> None:
+    """End game with right answers.
+
+    # noqa: DAR101
+
+    """
+    print('Congratulation, {0}!'.format(name))  # noqa: T001
+
+
+def game(question_function_name, answer_function_name) -> None:
+    """Play game.
+
+    # noqa: DAR101
+
+    """
+    name = welcome_user()
+    for index in range(3):  # noqa: B007
+        correct_answer = question_function_name()
+        answer = str(answer_function_name())
+        if answer != correct_answer:
+            end_game_fail(name, str(answer), str(correct_answer))
+            return
+        notify_right()
+    end_game_win(name)

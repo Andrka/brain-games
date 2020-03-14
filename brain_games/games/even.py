@@ -4,22 +4,36 @@
 
 from random import randint
 
-from brain_games.cli import end_game_fail, take_str_answer, welcome_user
+from brain_games.cli import ask_question, game, take_str_answer
 
 
-def play_even() -> None:  # noqa: WPS213
-    """Ask user about numbers type."""
-    name = welcome_user()
-    for index in range(3):  # noqa: B007
-        quiz_number = randint(1, 100)  # noqa: S311
-        if quiz_number % 2 == 0:
-            correct_answer = 'yes'
-        else:
-            correct_answer = 'no'
-        print('Question: {0}'.format(str(quiz_number)))  # noqa: T001
-        answer = take_str_answer()
-        if answer != correct_answer:
-            end_game_fail(name, answer, correct_answer)
-            return
-        print('Correct!')  # noqa: T001
-    print('Congratulation, {0}!'.format(name))  # noqa: T001
+def check_even(quiz_number: int) -> str:
+    """Check number for even.
+
+    # noqa: DAR101
+    # noqa: DAR201
+
+    """
+    if quiz_number % 2 == 0:
+        correct_answer = 'yes'
+    else:
+        correct_answer = 'no'
+    return correct_answer  # noqa: WPS331
+
+
+def realise_even_question() -> str:
+    """Realise number type.
+
+    # noqa: DAR201
+
+    """
+    quiz_number = randint(1, 100)  # noqa: S311
+    phrase = '{0}'.format(str(quiz_number))
+    ask_question(phrase)
+    correct_answer = check_even(quiz_number)
+    return correct_answer  # noqa: WPS331
+
+
+def play_even() -> None:
+    """Play even game."""
+    game(realise_even_question, take_str_answer)

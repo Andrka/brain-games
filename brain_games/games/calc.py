@@ -4,29 +4,46 @@
 
 from random import randint
 
-from brain_games.cli import end_game_fail, take_int_answer, welcome_user
+from brain_games.cli import ask_question, game, take_int_answer
 
 
-def play_calc() -> None:  # noqa: WPS210
-    """Ask user about operation result."""
-    name = welcome_user()
-    for index in range(3):  # noqa: B007
-        first_number = randint(1, 100)  # noqa: S311
-        second_number = randint(1, 100)  # noqa: S311
-        operation_int = randint(1, 3)  # noqa: S311
-        if operation_int == 1:
-            operator = '+'
-            correct_answer = first_number + second_number
-        elif operation_int == 2:
-            operator = '-'
-            correct_answer = first_number - second_number
-        else:
-            operator = '*'
-            correct_answer = first_number * second_number
-        print('Question: {0} {1} {2}'.format(str(first_number), operator, str(second_number)))  # noqa: T001, E501
-        answer = take_int_answer()
-        if answer != correct_answer:
-            end_game_fail(name, str(answer), str(correct_answer))
-            return
-        print('Correct!')  # noqa: T001
-    print('Congratulation, {0}!'.format(name))  # noqa: T001
+def find_calc(first_number: int, second_number: int, operation_int: int) -> int:  # noqa: E501
+    """Find operation result.
+
+    # noqa: DAR101
+    # noqa: DAR201
+
+    """
+    if operation_int == 1:
+        correct_answer = first_number + second_number
+    elif operation_int == 2:
+        correct_answer = first_number - second_number
+    else:
+        correct_answer = first_number * second_number
+    return correct_answer  # noqa: WPS331
+
+
+def realise_calc_question() -> str:  # noqa: WPS210
+    """Realise operation result.
+
+    # noqa: DAR201
+
+    """
+    first_number = randint(1, 100)  # noqa: S311
+    second_number = randint(1, 100)  # noqa: S311
+    operation_int = randint(1, 3)  # noqa: S311
+    if operation_int == 1:
+        operator = '+'
+    elif operation_int == 2:
+        operator = '-'
+    else:
+        operator = '*'
+    phrase = '{0} {1} {2}'.format(str(first_number), operator, str(second_number))  # noqa: E501
+    ask_question(phrase)
+    correct_answer = find_calc(first_number, second_number, operation_int)
+    return str(correct_answer)  # noqa: WPS331
+
+
+def play_calc() -> None:
+    """Play calc game."""
+    game(realise_calc_question, take_int_answer)
