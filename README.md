@@ -4,9 +4,9 @@
 
 #### Installation with pip:
 
-##### `pip install -i https://test.pypi.org/simple andrka-brain-games --extra-index-url https://pypi.org/simple`
+##### `pip install --user -i https://test.pypi.org/simple andrka-brain-games --extra-index-url https://pypi.org/simple`
 
-[![asciicast](https://asciinema.org/a/Ds4VwIxGqblsLJtdptxa0ThDZ.svg)](https://asciinema.org/a/Ds4VwIxGqblsLJtdptxa0ThDZ)
+[![asciicast](https://asciinema.org/a/cJtpwmEsxbPQiaRSeh4TJ8wr1.svg)](https://asciinema.org/a/cJtpwmEsxbPQiaRSeh4TJ8wr1)
 
 #### Start game:
 
