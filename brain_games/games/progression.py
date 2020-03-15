@@ -40,6 +40,10 @@ def realise_progression_question() -> str:  # noqa: WPS210
     return str(correct_answer)
 
 
-def play_progression() -> None:
-    """Play progression game."""
-    play_game(realise_progression_question, take_int_answer)
+def play_progression(name: str = '') -> None:
+    """Play progression game.
+
+    # noqa: DAR101
+
+    """
+    play_game(realise_progression_question, take_int_answer, name)

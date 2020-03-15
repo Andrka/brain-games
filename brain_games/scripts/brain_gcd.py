@@ -3,13 +3,14 @@
 
 """Module is being developed. Gcd game start."""
 
+from brain_games.cli import show_gcd_rules, show_start_message
 from brain_games.games.gcd import play_gcd
 
 
 def main() -> None:
     """Start game."""
-    print('Welcome to the Brain Games!')  # noqa: T001
-    print('Find the greatest common divisor of given numbers.')  # noqa: T001
+    show_start_message()
+    show_gcd_rules()
     play_gcd()
 
 

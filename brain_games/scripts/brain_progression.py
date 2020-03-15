@@ -3,14 +3,14 @@
 
 """Module is being developed. Progression game start."""
 
-from brain_games.cli import font_bold, font_end
+from brain_games.cli import show_progression_rules, show_start_message
 from brain_games.games.progression import play_progression
 
 
 def main() -> None:
     """Start game."""
-    print('Welcome to the Brain Games!')  # noqa: T001
-    print('What number is missing {0}in{1} the progression?'.format(font_bold, font_end))  # noqa: T001, E501
+    show_start_message()
+    show_progression_rules()
     play_progression()
 
 

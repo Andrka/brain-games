@@ -35,6 +35,10 @@ def realise_even_question() -> str:
     return correct_answer  # noqa: WPS331
 
 
-def play_even() -> None:
-    """Play even game."""
-    play_game(realise_even_question, take_str_answer)
+def play_even(name: str = '') -> None:
+    """Play even game.
+
+    # noqa: DAR101
+
+    """
+    play_game(realise_even_question, take_str_answer, name)

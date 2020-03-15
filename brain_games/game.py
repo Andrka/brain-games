@@ -10,14 +10,16 @@ from brain_games.cli import (
 )
 
 
-def play_game(question_function_name, answer_function_name) -> None:
+def play_game(question_function_name: object, answer_function_name: object, name: str) -> None:  # noqa: E501
     """Play game.
 
     # noqa: DAR101
 
     """
-    name = welcome_user()
-    for index in range(3):  # noqa: B007
+    if not name:
+        name = welcome_user()
+    game_number_rounds = 3
+    for index in range(game_number_rounds):  # noqa: B007
         correct_answer = question_function_name()
         answer = str(answer_function_name())
         if answer != correct_answer:

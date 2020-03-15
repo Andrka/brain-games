@@ -6,7 +6,7 @@
 
 ##### `pip install -i https://test.pypi.org/simple andrka-brain-games --extra-index-url https://pypi.org/simple`
 
-[![asciicast](https://asciinema.org/a/Rfmi3rJl4wc6QT4f2su05ZMxo.svg)](https://asciinema.org/a/Rfmi3rJl4wc6QT4f2su05ZMxo)
+[![asciicast](https://asciinema.org/a/Ds4VwIxGqblsLJtdptxa0ThDZ.svg)](https://asciinema.org/a/Ds4VwIxGqblsLJtdptxa0ThDZ)
 
 #### Start game:
 
@@ -21,3 +21,6 @@
 
 ##### `brain-progression`
 [![asciicast](https://asciinema.org/a/5X06B6IBevSw2b6Ocmpkx32AB.svg)](https://asciinema.org/a/5X06B6IBevSw2b6Ocmpkx32AB)
+
+##### `brain-prime`
+[![asciicast](https://asciinema.org/a/new3qIokT4zD8caZPCW96ByQb.svg)](https://asciinema.org/a/new3qIokT4zD8caZPCW96ByQb)

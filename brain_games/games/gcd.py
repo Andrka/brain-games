@@ -35,6 +35,10 @@ def realise_gcd_question() -> str:  # noqa: WPS210
     return str(correct_answer)  # noqa: WPS331
 
 
-def play_gcd() -> None:
-    """Play gcd game."""
-    play_game(realise_gcd_question, take_int_answer)
+def play_gcd(name: str = '') -> None:
+    """Play gcd game.
+
+    # noqa: DAR101
+
+    """
+    play_game(realise_gcd_question, take_int_answer, name)

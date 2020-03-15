@@ -45,6 +45,10 @@ def realise_calc_question() -> str:  # noqa: WPS210
     return str(correct_answer)  # noqa: WPS331
 
 
-def play_calc() -> None:
-    """Play calc game."""
-    play_game(realise_calc_question, take_int_answer)
+def play_calc(name: str = '') -> None:
+    """Play calc game.
+
+    # noqa: DAR101
+
+    """
+    play_game(realise_calc_question, take_int_answer, name)

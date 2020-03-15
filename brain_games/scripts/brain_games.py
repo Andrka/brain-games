@@ -3,12 +3,12 @@
 
 """Module is being developed. General script - game selecting."""
 
-from brain_games.cli import welcome_user
+from brain_games.cli import show_start_message, welcome_user
 
 
 def main() -> None:
     """Start application."""
-    print('Welcome to the Brain Games!')  # noqa: T001
+    show_start_message()
     name = welcome_user()  # noqa: F841
 
 
