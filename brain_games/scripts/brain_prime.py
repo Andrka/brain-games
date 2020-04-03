@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
-"""Module is being developed. Prime game start."""
+"""Prime game start."""
 
-from brain_games.cli import show_prime_rules, show_start_message
+from brain_games.cli import print_prime_rules, print_start_message
 from brain_games.games.prime import play_prime
 
 
-def main() -> None:
+def main():
     """Start game."""
-    show_start_message()
-    show_prime_rules()
+    print_start_message()
+    print_prime_rules()
     play_prime()
 
 

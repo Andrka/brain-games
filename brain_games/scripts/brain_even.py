@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
-"""Module is being developed. Even game start."""
+"""Even game start."""
 
-from brain_games.cli import show_even_rules, show_start_message
+from brain_games.cli import print_even_rules, print_start_message
 from brain_games.games.even import play_even
 
 
-def main() -> None:
+def main():
     """Start game."""
-    show_start_message()
-    show_even_rules()
+    print_start_message()
+    print_even_rules()
     play_even()
 
 

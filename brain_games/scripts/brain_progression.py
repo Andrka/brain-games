@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
-"""Module is being developed. Progression game start."""
+"""Progression game start."""
 
-from brain_games.cli import show_progression_rules, show_start_message
+from brain_games.cli import print_progression_rules, print_start_message
 from brain_games.games.progression import play_progression
 
 
-def main() -> None:
+def main():
     """Start game."""
-    show_start_message()
-    show_progression_rules()
+    print_start_message()
+    print_progression_rules()
     play_progression()
 
 

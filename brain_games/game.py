@@ -1,29 +1,33 @@
 # -*- coding:utf-8 -*-
 
-"""Module is being developed. Game logic."""
+"""Game logic."""
 
 from brain_games.cli import (
-    end_game_fail,
-    end_game_win,
-    notify_right,
-    welcome_user,
+    print_if_lose_game,
+    print_if_right_answer,
+    print_if_win_game,
+    take_user_name,
 )
 
 
-def play_game(question_function_name: object, answer_function_name: object, name: str) -> None:  # noqa: E501
-    """Play game.
-
-    # noqa: DAR101
-
-    """
-    if not name:
-        name = welcome_user()
-    game_number_rounds = 3
-    for index in range(game_number_rounds):  # noqa: B007
-        correct_answer = question_function_name()
-        answer = str(answer_function_name())
-        if answer != correct_answer:
-            end_game_fail(name, str(answer), str(correct_answer))
+def play_game(
+    create_question,
+    take_user_answer,
+    user_name: str,
+):
+    """Play game."""
+    if not user_name:
+        user_name = take_user_name()
+    game_rounds_number = 3
+    for _ in range(game_rounds_number):
+        correct_answer = create_question()
+        user_answer = str(take_user_answer())
+        if user_answer != correct_answer:
+            print_if_lose_game(
+                user_name,
+                str(user_answer),
+                str(correct_answer),
+            )
             return
-        notify_right()
-    end_game_win(name)
+        print_if_right_answer()
+    print_if_win_game(user_name)

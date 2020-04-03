@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
-"""Module is being developed. Calc game start."""
+"""Calc game start."""
 
-from brain_games.cli import show_calc_rules, show_start_message
+from brain_games.cli import print_calc_rules, print_start_message
 from brain_games.games.calc import play_calc
 
 
-def main() -> None:
+def main():
     """Start game."""
-    show_start_message()
-    show_calc_rules()
+    print_start_message()
+    print_calc_rules()
     play_calc()
 
 

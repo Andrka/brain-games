@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 
-"""Module is being developed. Logic of prime game."""
+"""Logic of prime game."""
 
 from random import randint
 
@@ -8,13 +8,8 @@ from brain_games.cli import ask_question, take_str_answer
 from brain_games.game import play_game
 
 
-def check_prime(number: int) -> str:
-    """Find number type.
-
-    # noqa: DAR101
-    # noqa: DAR201
-
-    """
+def check_if_prime(number: int) -> str:
+    """Check number for prime."""
     if number % 2 == 0:
         if number == 2:
             return 'yes'
@@ -27,23 +22,14 @@ def check_prime(number: int) -> str:
     return 'no'
 
 
-def realise_prime_question() -> str:  # noqa: WPS210
-    """Realise prime.
-
-    # noqa: DAR201
-
-    """
-    number = randint(1, 1000)  # noqa: S311
+def create_prime_question() -> str:
+    """Create, show to user number and return if it is prime."""
+    number = randint(1, 1000)
     phrase = str(number)
     ask_question(phrase)
-    correct_answer = check_prime(number)
-    return correct_answer  # noqa: WPS331
+    return check_if_prime(number)
 
 
-def play_prime(name: str = '') -> None:
-    """Play prime game.
-
-    # noqa: DAR101
-
-    """
-    play_game(realise_prime_question, take_str_answer, name)
+def play_prime(user_name: str = ''):
+    """Play prime game."""
+    play_game(create_prime_question, take_str_answer, user_name)

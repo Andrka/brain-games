@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
-"""Module is being developed. Gcd game start."""
+"""Gcd game start."""
 
-from brain_games.cli import show_gcd_rules, show_start_message
+from brain_games.cli import print_gcd_rules, print_start_message
 from brain_games.games.gcd import play_gcd
 
 
-def main() -> None:
+def main():
     """Start game."""
-    show_start_message()
-    show_gcd_rules()
+    print_start_message()
+    print_gcd_rules()
     play_gcd()
 
 

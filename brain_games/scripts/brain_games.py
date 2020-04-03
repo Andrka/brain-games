@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
-"""Module is being developed. General script - game selecting."""
+"""General script - game selecting."""
 
-from brain_games.cli import show_start_message, welcome_user
+from brain_games.cli import print_start_message, take_user_name
 
 
-def main() -> None:
+def main():
     """Start application."""
-    show_start_message()
-    name = welcome_user()  # noqa: F841
+    print_start_message()
+    take_user_name()
 
 
 if __name__ == '__main__':

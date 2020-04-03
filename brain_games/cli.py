@@ -1,112 +1,127 @@
 # -*- coding:utf-8 -*-
 
-"""Module is being developed. Command line interface."""
+"""Command line interface."""
 
 import prompt
 
+empty_string = ''
 
-def welcome_user() -> str:
-    """Greet user and return taken name.
 
-    # noqa: DAR201
-
-    """
-    print('')  # noqa: T001
+def take_user_name() -> str:
+    """Greet user and return taken name."""
+    print(empty_string)
     name = prompt.string('May I have your name? ')
-    print('Hello, {0}!'.format(name))  # noqa: T001
-    print('')  # noqa: T001
+    print('Hello, {0}!'.format(name))
+    print(empty_string)
     return name
 
 
 def take_str_answer() -> str:
-    """Take str answer from user.
-
-    # noqa: DAR201
-
-    """
+    """Take answer with str type from user."""
     return prompt.string('Your answer: ')
 
 
 def take_int_answer() -> int:
-    """Take int answer from user.
-
-    # noqa: DAR201
-
-    """
+    """Take answer with int type from user."""
     return prompt.integer('Your answer: ')
 
 
-def ask_question(phrase: str) -> None:
-    """Ask user the question.
-
-    # noqa: DAR101
-
-    """
-    print('Question: {0}'.format(phrase))  # noqa: T001
+def ask_question(phrase: str):
+    """Ask user the question."""
+    print('Question: {0}'.format(phrase))
 
 
-FONT_RED = '\033[91m'
-FONT_BLUE = '\033[96m'
-FONT_BOLD = '\033[1m'
-FONT_END = '\033[0m'
+def colour_to_red(text: str) -> str:
+    """Colour text to red."""
+    font_red = '\033[91m'
+    font_end = '\033[0m'
+    return '{0}{1}{2}'.format(font_red, text, font_end)
 
 
-def end_game_fail(name: str, answer: str, correct_answer: str) -> None:
-    """End game with wrong answer.
-
-    # noqa: DAR101
-
-    """
-    print('{0}\'{1}\'{2} is wrong '.format(FONT_RED, answer, FONT_END), end='')  # noqa: T001, E501, Q003
-    print('answer ;{0}({1}{2}.{3} '.format(FONT_BOLD, FONT_END, FONT_BLUE, FONT_END), end='')  # noqa: T001, E501
-    print('Correct answer was ', end='')  # noqa: T001
-    print('{0}\'{1}\'{2}{3}.{4}'.format(FONT_RED, correct_answer, FONT_END, FONT_BLUE, FONT_END))  # noqa: T001, E501, Q003
-    print('Let{0}\'s try again, '.format(FONT_RED), end='')  # noqa: T001, E501, Q003
-    print('{0}!{1}'.format(name, FONT_END))  # noqa: T001
+def colour_to_blue(text: str) -> str:
+    """Colour text to blue."""
+    font_blue = '\033[96m'
+    font_end = '\033[0m'
+    return '{0}{1}{2}'.format(font_blue, text, font_end)
 
 
-def notify_right() -> None:
+def colour_to_bold(text: str) -> str:
+    """Colour text to bold."""
+    font_bold = '\033[1m'
+    font_end = '\033[0m'
+    return '{0}{1}{2}'.format(font_bold, text, font_end)
+
+
+def print_if_lose_game(name: str, user_answer: str, correct_answer: str):
+    """End game with wrong answer."""
+    message = empty_string.join((
+        colour_to_red("'{0}'").format(user_answer),
+        ' is wrong answer ;',
+        colour_to_bold('('),
+        colour_to_blue('.'),
+        ' Correct answer was ',
+        colour_to_red("'{0}'").format(correct_answer),
+        colour_to_blue('.\n'),
+        'Let',
+        colour_to_red("'s try again, {0}!").format(name),
+    ))
+    print(message)
+
+
+def print_if_right_answer():
     """Notify user about right answer."""
-    print('Correct!')  # noqa: T001
+    print('Correct!')
 
 
-def end_game_win(name: str) -> None:
-    """End game with right answers.
-
-    # noqa: DAR101
-
-    """
-    print('Congratulation, {0}!'.format(name))  # noqa: T001
+def print_if_win_game(name: str):
+    """End game with right answers."""
+    print('Congratulation, {0}!'.format(name))
 
 
-def show_start_message() -> None:
+def print_start_message():
     """Show start message."""
-    print('Welcome to the Brain Games!')  # noqa: T001
+    print('Welcome to the Brain Games!')
 
 
-def show_calc_rules() -> None:
+def print_calc_rules():
     """Show calc game rules."""
-    print('What is the result of the exspression?')  # noqa: T001
+    rules = 'What is the result of the expression?'
+    print(rules)
 
 
-def show_even_rules() -> None:
+def print_even_rules():
     """Show even game rules."""
-    print('Welcome to the Brain Games!')  # noqa: T001
-    print('Answer {0}"yes"{1} '.format(FONT_RED, FONT_END), end='')  # noqa: T001, E501
-    print('{0}if{1} number even otherwise '.format(FONT_BOLD, FONT_END), end='')  # noqa: T001, E501
-    print('answer {0}"no"{1}{2}.{3}'.format(FONT_RED, FONT_END, FONT_BLUE, FONT_END))  # noqa: T001, E501
+    rules = empty_string.join((
+        'Answer',
+        colour_to_red(' "yes" '),
+        colour_to_bold('if'),
+        ' number is even otherwise answer ',
+        colour_to_red('"no"'),
+        colour_to_bold('.'),
+    ))
+    print(rules)
 
 
-def show_gcd_rules() -> None:
+def print_gcd_rules():
     """Show gcd game rules."""
-    print('Find the greatest common divisor of given numbers.')  # noqa: T001
+    rules = 'Find the greatest common divisor of given numbers.'
+    print(rules)
 
 
-def show_prime_rules() -> None:
+def print_prime_rules():
     """Show prime game rules."""
-    print('Answer "yes" if given number is prime. Otherwise answer "no".')  # noqa: T001, E501
+    rules = empty_string.join((
+        'Answer "yes" if given number is prime. ',
+        'Otherwise answer "no".',
+    ))
+    print(rules)
 
 
-def show_progression_rules() -> None:
+def print_progression_rules():
     """Show progression game rules."""
-    print('What number is missing {0}in{1} the progression?'.format(FONT_BOLD, FONT_END))  # noqa: T001, E501
+    rules = empty_string.join((
+        'What number is missing ',
+        colour_to_bold('in'),
+        ' the progression?',
+    ))
+    print(rules)
