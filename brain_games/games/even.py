@@ -4,8 +4,16 @@
 
 from random import randint
 
-from brain_games.cli import ask_question, take_str_answer
-from brain_games.game import play_game
+from brain_games.cli import paint_to_bold, paint_to_red
+
+RULES = ''.join((
+    'Answer',
+    paint_to_red(' "yes" '),
+    paint_to_bold('if'),
+    ' number is even otherwise answer ',
+    paint_to_red('"no"'),
+    paint_to_bold('.'),
+))
 
 
 def check_if_even(quiz_number: int) -> str:
@@ -15,14 +23,8 @@ def check_if_even(quiz_number: int) -> str:
     return 'no'
 
 
-def create_even_question() -> str:
-    """Create, show to user number and return if it is even."""
+def create_round_parameters() -> tuple:
+    """Create and return round question and right answer for even game."""
     quiz_number = randint(1, 100)
-    phrase = '{0}'.format(str(quiz_number))
-    ask_question(phrase)
-    return check_if_even(quiz_number)
-
-
-def play_even(user_name: str = ''):
-    """Play even game."""
-    play_game(create_even_question, take_str_answer, user_name)
+    question = '{0}'.format(str(quiz_number))
+    return question, check_if_even(quiz_number)

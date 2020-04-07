@@ -3,15 +3,12 @@
 
 """Even game start."""
 
-from brain_games.cli import print_even_rules, print_start_message
-from brain_games.games.even import play_even
+from brain_games import game, games
 
 
 def main():
     """Start game."""
-    print_start_message()
-    print_even_rules()
-    play_even()
+    game.play_game(games.even)
 
 
 if __name__ == '__main__':

@@ -4,8 +4,7 @@
 
 from random import randint
 
-from brain_games.cli import ask_question, take_int_answer
-from brain_games.game import play_game
+RULES = 'Find the greatest common divisor of given numbers.'
 
 
 def find_gcd(first_number: int, second_number: int) -> int:
@@ -18,16 +17,12 @@ def find_gcd(first_number: int, second_number: int) -> int:
     )
 
 
-def create_gcd_question() -> str:
-    """Create, show to user numbers and return their gcd."""
+def create_round_parameters() -> tuple:
+    """Create and return round question and right answer for gdc game."""
     first_number = randint(1, 100)
     second_number = randint(1, 100)
-    phrase = '{0} {1}'.format(str(first_number), str(second_number))
-    ask_question(phrase)
-    correct_answer = find_gcd(first_number, second_number)
-    return str(correct_answer)
-
-
-def play_gcd(user_name: str = ''):
-    """Play gcd game."""
-    play_game(create_gcd_question, take_int_answer, user_name)
+    question = '{0} {1}'.format(str(first_number), str(second_number))
+    return question, find_gcd(
+        first_number,
+        second_number,
+    )

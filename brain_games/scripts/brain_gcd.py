@@ -3,15 +3,12 @@
 
 """Gcd game start."""
 
-from brain_games.cli import print_gcd_rules, print_start_message
-from brain_games.games.gcd import play_gcd
+from brain_games import game, games
 
 
 def main():
     """Start game."""
-    print_start_message()
-    print_gcd_rules()
-    play_gcd()
+    game.play_game(games.gcd)
 
 
 if __name__ == '__main__':

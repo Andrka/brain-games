@@ -3,15 +3,12 @@
 
 """Prime game start."""
 
-from brain_games.cli import print_prime_rules, print_start_message
-from brain_games.games.prime import play_prime
+from brain_games import game, games
 
 
 def main():
     """Start game."""
-    print_start_message()
-    print_prime_rules()
-    play_prime()
+    game.play_game(games.prime)
 
 
 if __name__ == '__main__':

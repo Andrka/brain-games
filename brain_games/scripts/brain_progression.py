@@ -3,15 +3,12 @@
 
 """Progression game start."""
 
-from brain_games.cli import print_progression_rules, print_start_message
-from brain_games.games.progression import play_progression
+from brain_games import game, games
 
 
 def main():
     """Start game."""
-    print_start_message()
-    print_progression_rules()
-    play_progression()
+    game.play_game(games.progression)
 
 
 if __name__ == '__main__':

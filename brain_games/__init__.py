@@ -1,3 +1,5 @@
 # -*- coding:utf-8 -*-
 
-"""Package is being developed."""
+"""Package of game engine."""
+
+from brain_games import cli, game  # noqa: F401

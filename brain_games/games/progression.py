@@ -4,8 +4,14 @@
 
 from random import randint
 
-from brain_games.cli import ask_question, take_int_answer
-from brain_games.game import play_game
+from brain_games.cli import paint_to_bold
+
+EMPTY_STRING = ''
+RULES = EMPTY_STRING.join((
+    'What number is missing ',
+    paint_to_bold('in'),
+    ' the progression?',
+))
 
 
 def find_progression_number(
@@ -17,29 +23,29 @@ def find_progression_number(
     return start_number + (miss_number - 1) * step_number
 
 
-empty_string = ''
+def create_round_parameters() -> tuple:
+    """Create round parameters.
 
+    Create and return round question and right answer
+    for progression game.
 
-def create_progression_question() -> str:
-    """Create, show to user progression and return miss number."""
+    """
     start_number = randint(1, 10)
     step_number = randint(1, 10)
     miss_number = randint(1, 10)
-    phrase = ''
+    question = ''
     for index in range(10):
         if (index + 1) == miss_number:
-            phrase = empty_string.join((phrase, '..'))
+            question = EMPTY_STRING.join((question, '..'))
         else:
-            phrase = empty_string.join((
-                phrase,
+            question = EMPTY_STRING.join((
+                question,
                 str(start_number + index * step_number),
             ))
         if index < 9:
-            phrase = empty_string.join((phrase, ' '))
-    ask_question(phrase)
-    return str(find_progression_number(start_number, step_number, miss_number))
-
-
-def play_progression(user_name: str = empty_string):
-    """Play progression game."""
-    play_game(create_progression_question, take_int_answer, user_name)
+            question = EMPTY_STRING.join((question, ' '))
+    return question, find_progression_number(
+        start_number,
+        step_number,
+        miss_number,
+    )

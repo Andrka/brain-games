@@ -4,15 +4,13 @@
 
 import prompt
 
-empty_string = ''
 
-
-def take_user_name() -> str:
+def welcome_user() -> str:
     """Greet user and return taken name."""
-    print(empty_string)
+    print('')
     name = prompt.string('May I have your name? ')
     print('Hello, {0}!'.format(name))
-    print(empty_string)
+    print('')
     return name
 
 
@@ -31,97 +29,62 @@ def ask_question(phrase: str):
     print('Question: {0}'.format(phrase))
 
 
-def colour_to_red(text: str) -> str:
-    """Colour text to red."""
-    font_red = '\033[91m'
-    font_end = '\033[0m'
-    return '{0}{1}{2}'.format(font_red, text, font_end)
+FONT_RED = '\033[91m'
+FONT_END = '\033[0m'
 
 
-def colour_to_blue(text: str) -> str:
-    """Colour text to blue."""
-    font_blue = '\033[96m'
-    font_end = '\033[0m'
-    return '{0}{1}{2}'.format(font_blue, text, font_end)
+def paint_to_red(text: str) -> str:
+    """Paint text to red."""
+    return '{0}{1}{2}'.format(FONT_RED, text, FONT_END)
 
 
-def colour_to_bold(text: str) -> str:
-    """Colour text to bold."""
-    font_bold = '\033[1m'
-    font_end = '\033[0m'
-    return '{0}{1}{2}'.format(font_bold, text, font_end)
+FONT_BLUE = '\033[96m'
 
 
-def print_if_lose_game(name: str, user_answer: str, correct_answer: str):
+def paint_to_blue(text: str) -> str:
+    """Paint text to blue."""
+    return '{0}{1}{2}'.format(FONT_BLUE, text, FONT_END)
+
+
+FONT_BOLD = '\033[1m'
+
+
+def paint_to_bold(text: str) -> str:
+    """Paint text to bold."""
+    return '{0}{1}{2}'.format(FONT_BOLD, text, FONT_END)
+
+
+def print_when_lose_game(name: str, user_answer, correct_answer):
     """End game with wrong answer."""
-    message = empty_string.join((
-        colour_to_red("'{0}'").format(user_answer),
+    message = ''.join((
+        paint_to_red("'{0}'").format(user_answer),
         ' is wrong answer ;',
-        colour_to_bold('('),
-        colour_to_blue('.'),
+        paint_to_bold('('),
+        paint_to_blue('.'),
         ' Correct answer was ',
-        colour_to_red("'{0}'").format(correct_answer),
-        colour_to_blue('.\n'),
+        paint_to_red("'{0}'").format(correct_answer),
+        paint_to_blue('.\n'),
         'Let',
-        colour_to_red("'s try again, {0}!").format(name),
+        paint_to_red("'s try again, {0}!").format(name),
     ))
     print(message)
 
 
-def print_if_right_answer():
+def print_when_right_answer():
     """Notify user about right answer."""
     print('Correct!')
 
 
-def print_if_win_game(name: str):
+def print_when_win_game(name: str):
     """End game with right answers."""
     print('Congratulation, {0}!'.format(name))
 
 
 def print_start_message():
     """Show start message."""
-    print('Welcome to the Brain Games!')
+    print('\nWelcome to the Brain Games!')
 
 
-def print_calc_rules():
-    """Show calc game rules."""
-    rules = 'What is the result of the expression?'
-    print(rules)
-
-
-def print_even_rules():
-    """Show even game rules."""
-    rules = empty_string.join((
-        'Answer',
-        colour_to_red(' "yes" '),
-        colour_to_bold('if'),
-        ' number is even otherwise answer ',
-        colour_to_red('"no"'),
-        colour_to_bold('.'),
-    ))
-    print(rules)
-
-
-def print_gcd_rules():
-    """Show gcd game rules."""
-    rules = 'Find the greatest common divisor of given numbers.'
-    print(rules)
-
-
-def print_prime_rules():
-    """Show prime game rules."""
-    rules = empty_string.join((
-        'Answer "yes" if given number is prime. ',
-        'Otherwise answer "no".',
-    ))
-    print(rules)
-
-
-def print_progression_rules():
-    """Show progression game rules."""
-    rules = empty_string.join((
-        'What number is missing ',
-        colour_to_bold('in'),
-        ' the progression?',
-    ))
+def print_rules(rules: str):
+    """Show game rules."""
     print(rules)

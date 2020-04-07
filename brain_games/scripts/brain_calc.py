@@ -3,15 +3,12 @@
 
 """Calc game start."""
 
-from brain_games.cli import print_calc_rules, print_start_message
-from brain_games.games.calc import play_calc
+from brain_games import game, games
 
 
 def main():
     """Start game."""
-    print_start_message()
-    print_calc_rules()
-    play_calc()
+    game.play_game(games.calc)
 
 
 if __name__ == '__main__':

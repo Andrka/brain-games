@@ -4,8 +4,10 @@
 
 from random import randint
 
-from brain_games.cli import ask_question, take_str_answer
-from brain_games.game import play_game
+RULES = ''.join((
+    'Answer "yes" if given number is prime. ',
+    'Otherwise answer "no".',
+))
 
 
 def check_if_prime(number: int) -> str:
@@ -22,14 +24,7 @@ def check_if_prime(number: int) -> str:
     return 'no'
 
 
-def create_prime_question() -> str:
-    """Create, show to user number and return if it is prime."""
+def create_round_parameters() -> tuple:
+    """Create and return round question and right answer for prime game."""
     number = randint(1, 1000)
-    phrase = str(number)
-    ask_question(phrase)
-    return check_if_prime(number)
-
-
-def play_prime(user_name: str = ''):
-    """Play prime game."""
-    play_game(create_prime_question, take_str_answer, user_name)
+    return str(number), check_if_prime(number)

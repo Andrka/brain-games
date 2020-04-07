@@ -4,8 +4,7 @@
 
 from random import randint
 
-from brain_games.cli import ask_question, take_int_answer
-from brain_games.game import play_game
+RULES = 'What is the result of the expression?'
 
 
 def find_calculation_result(
@@ -21,8 +20,8 @@ def find_calculation_result(
     return first_number * second_number
 
 
-def create_calc_question() -> str:
-    """Create, show to user calc question and return it's answer."""
+def create_round_parameters() -> tuple:
+    """Create and return round question and right answer for calc game."""
     first_number = randint(1, 100)
     second_number = randint(1, 100)
     operation_int = randint(1, 3)
@@ -32,19 +31,13 @@ def create_calc_question() -> str:
         operator = '-'
     else:
         operator = '*'
-    phrase = '{0} {1} {2}'.format(
+    question = '{0} {1} {2}'.format(
         str(first_number),
         operator,
         str(second_number),
     )
-    ask_question(phrase)
-    return str(find_calculation_result(
+    return question, find_calculation_result(
         first_number,
         second_number,
         operation_int,
-    ))
-
-
-def play_calc(user_name: str = ''):
-    """Play calc game."""
-    play_game(create_calc_question, take_int_answer, user_name)
+    )

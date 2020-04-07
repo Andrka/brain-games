@@ -1,3 +1,3 @@
 # -*- coding:utf-8 -*-
 
-"""Package is being developed."""
+"""Package of game scripts."""
