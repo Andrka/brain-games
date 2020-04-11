@@ -4,27 +4,28 @@
 
 from random import randint
 
-RULES = ''.join((
-    'Answer "yes" if given number is prime. ',
-    'Otherwise answer "no".',
-))
+RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
-def check_if_prime(number: int) -> str:
+def is_prime(number: int) -> bool:
     """Check number for prime."""
+    if number == 2:
+        return True
     if number % 2 == 0:
-        if number == 2:
-            return 'yes'
-        return 'no'
+        return False
     divisor = 3
     while divisor ** 2 <= number and number % divisor != 0:  # noqa: S001
         divisor += 2
     if divisor ** 2 > number:
-        return 'yes'
-    return 'no'
+        return True
+    return False
 
 
-def create_round_parameters() -> tuple:
-    """Create and return round question and right answer for prime game."""
+def create_game_parameters() -> tuple:
+    """Create and return question and right answer for prime game."""
     number = randint(1, 1000)
-    return str(number), check_if_prime(number)
+    if is_prime(number):
+        correct_answer = 'yes'
+    else:
+        correct_answer = 'no'
+    return str(number), correct_answer

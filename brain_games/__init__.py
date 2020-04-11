@@ -2,4 +2,4 @@
 
 """Package of game engine."""
 
-from brain_games import cli, game  # noqa: F401
+from brain_games import cli, engine  # noqa: F401

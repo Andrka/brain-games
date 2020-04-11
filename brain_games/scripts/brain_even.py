@@ -3,12 +3,12 @@
 
 """Even game start."""
 
-from brain_games import game, games
+from brain_games import engine, games
 
 
 def main():
     """Start game."""
-    game.play_game(games.even)
+    engine.play_game(games.even)
 
 
 if __name__ == '__main__':

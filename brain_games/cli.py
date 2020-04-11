@@ -14,14 +14,9 @@ def welcome_user() -> str:
     return name
 
 
-def take_str_answer() -> str:
-    """Take answer with str type from user."""
+def take_answer() -> str:
+    """Take answer from user."""
     return prompt.string('Your answer: ')
-
-
-def take_int_answer() -> int:
-    """Take answer with int type from user."""
-    return prompt.integer('Your answer: ')
 
 
 def ask_question(phrase: str):
@@ -54,7 +49,11 @@ def paint_to_bold(text: str) -> str:
     return '{0}{1}{2}'.format(FONT_BOLD, text, FONT_END)
 
 
-def print_when_lose_game(name: str, user_answer, correct_answer):
+def print_when_lose_game(
+    name: str,
+    user_answer: str,
+    correct_answer: str,
+):
     """End game with wrong answer."""
     message = ''.join((
         paint_to_red("'{0}'").format(user_answer),
