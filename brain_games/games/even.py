@@ -9,9 +9,7 @@ RULES = 'Answer "yes" if number is even otherwise answer "no".'
 
 def is_even(number: int) -> bool:
     """Check number for even."""
-    if number % 2 == 0:
-        return True
-    return False
+    return number % 2 == 0
 
 
 def create_game_parameters() -> tuple:

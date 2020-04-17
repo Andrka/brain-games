@@ -4,24 +4,30 @@
 
 import prompt
 
+from brain_games import games
+
 
 def welcome_user() -> str:
     """Greet user and return taken name."""
-    print('')
+    print()
     name = prompt.string('May I have your name? ')
     print('Hello, {0}!'.format(name))
-    print('')
     return name
 
 
-def take_answer() -> str:
-    """Take answer from user."""
+def take_str_answer() -> str:
+    """Take string answer from user."""
     return prompt.string('Your answer: ')
+
+
+def take_int_answer() -> int:
+    """Take int answer from user."""
+    return prompt.integer('Your answer: ')
 
 
 def ask_question(phrase: str):
     """Ask user the question."""
-    print('Question: {0}'.format(phrase))
+    print('\nQuestion: {0}\n'.format(phrase))
 
 
 FONT_RED = '\033[91m'
@@ -86,4 +92,21 @@ def print_start_message():
 
 def print_rules(rules: str):
     """Show game rules."""
-    print(rules)
+    print('\n', rules, sep='')
+
+
+GAMES = (
+    ('calc game', games.calc),
+    ('even game', games.even),
+    ('gcd game', games.gcd),
+    ('prime game', games.prime),
+    ('progression game', games.progression),
+)
+
+
+def print_available_games():
+    """Print available games to choose."""
+    print('Choose game to play:')
+    for index, game in enumerate(GAMES):
+        print('{0} - {1}'.format(index + 1, game[0]))
+    print()

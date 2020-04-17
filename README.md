@@ -10,38 +10,44 @@ Before you start, you will need Python and pip on your computer. To install "Bra
 
 `pip install --user -i https://test.pypi.org/simple andrka-brain-games --extra-index-url https://pypi.org/simple`
 
-[![asciicast](https://asciinema.org/a/B5TPfOvlzsPbfLzDlRimm0E2x.svg)](https://asciinema.org/a/B5TPfOvlzsPbfLzDlRimm0E2x)
+[![asciicast](https://asciinema.org/a/2LY3XeIPC2GicMqUK859ZaYhT.svg)](https://asciinema.org/a/2LY3XeIPC2GicMqUK859ZaYhT)
 
 #### Start game:
 
-To play this games after installation, print and run their names in the terminal. Give three correct answers to win in every game.
+To play this games after installation, print and run
 
-`brain-even`
+`brain-games`
 
-In this game you need to decide if a number is even.
+or their individual names in the terminal. Give three correct answers to win in every game.
 
-[![asciicast](https://asciinema.org/a/hSDFsm4HOo0gZu04CERxawlAE.svg)](https://asciinema.org/a/hSDFsm4HOo0gZu04CERxawlAE)
+[![asciicast](https://asciinema.org/a/bUipbbwjiQ9S13E1AOGKpOpYj.svg)](https://asciinema.org/a/bUipbbwjiQ9S13E1AOGKpOpYj)
 
 `brain-calc`
 
 In this game you need to calculate a math expression.
 
-[![asciicast](https://asciinema.org/a/qFWqMiJ0nhWFQYFTt5dWw8oHj.svg)](https://asciinema.org/a/qFWqMiJ0nhWFQYFTt5dWw8oHj)
+[![asciicast](https://asciinema.org/a/cJFjhirNxh9r7Y1bAEuT7x4bE.svg)](https://asciinema.org/a/cJFjhirNxh9r7Y1bAEuT7x4bE)
+
+`brain-even`
+
+In this game you need to decide if a number is even.
+
+[![asciicast](https://asciinema.org/a/i32Xw95XZmmqLE1WW2aTA8jLM.svg)](https://asciinema.org/a/i32Xw95XZmmqLE1WW2aTA8jLM)
 
 `brain-gcd`
 
 In this game you need to find the greatest common divisor of given numbers.
 
-[![asciicast](https://asciinema.org/a/QRbczIMyNMbKREB4t3HaqGhg2.svg)](https://asciinema.org/a/QRbczIMyNMbKREB4t3HaqGhg2)
-
-`brain-progression`
-
-In this game you need to find the missing number in the progression.
-
-[![asciicast](https://asciinema.org/a/fW2QwQ6aRipmLRnYf66pojCrr.svg)](https://asciinema.org/a/fW2QwQ6aRipmLRnYf66pojCrr)
+[![asciicast](https://asciinema.org/a/wcOyVd2tvD57Un1tRjreglpfA.svg)](https://asciinema.org/a/wcOyVd2tvD57Un1tRjreglpfA)
 
 `brain-prime`
 
 In this game you need to decide if a number is prime.
 
-[![asciicast](https://asciinema.org/a/sg5JJFoG2kWfd3cMrLqccIKi5.svg)](https://asciinema.org/a/sg5JJFoG2kWfd3cMrLqccIKi5)
+[![asciicast](https://asciinema.org/a/xgp1ejHOpPjzbmGaBOe3eXU04.svg)](https://asciinema.org/a/xgp1ejHOpPjzbmGaBOe3eXU04)
+
+`brain-progression`
+
+In this game you need to find the missing number in the progression.
+
+[![asciicast](https://asciinema.org/a/iVw01LDOfXjD1J3QaC1ZqAPp5.svg)](https://asciinema.org/a/iVw01LDOfXjD1J3QaC1ZqAPp5)

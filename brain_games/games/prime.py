@@ -2,6 +2,7 @@
 
 """Logic of prime game."""
 
+from math import sqrt
 from random import randint
 
 RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".'
@@ -14,11 +15,10 @@ def is_prime(number: int) -> bool:
     if number % 2 == 0:
         return False
     divisor = 3
-    while divisor ** 2 <= number and number % divisor != 0:  # noqa: S001
+    new_number = sqrt(number)
+    while divisor <= new_number and number % divisor != 0:  # noqa: S001
         divisor += 2
-    if divisor ** 2 > number:
-        return True
-    return False
+    return divisor > new_number
 
 
 def create_game_parameters() -> tuple:
