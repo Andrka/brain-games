@@ -1,6 +1,6 @@
 ## Brain games
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/f0954999be8554f161f3/maintainability)](https://codeclimate.com/github/Andrka/brain-games/maintainability) [![Build Status](https://travis-ci.org/Andrka/python-project-lvl1.svg?branch=master)](https://travis-ci.org/Andrka/python-project-lvl1)
+[![Maintainability](https://api.codeclimate.com/v1/badges/f0954999be8554f161f3/maintainability)](https://codeclimate.com/github/Andrka/brain-games/maintainability) [![Build Status](https://travis-ci.org/Andrka/brain-games.svg?branch=master)](https://travis-ci.org/Andrka/brain-games)
 
 "Brain games" is a group of simple command line games written in Python.
 
